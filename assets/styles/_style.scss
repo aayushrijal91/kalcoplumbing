@@ -1,0 +1,560 @@
+main.homepage {
+    #partnersSlider {
+        .slick-track {
+            display: flex;
+        }
+
+        .slick-slide {
+            height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    section.contactFormWrapper {
+        background: linear-gradient($lighter 0 25%, $white 25% 100%);
+    }
+
+    section.serviceList {
+        border-radius: 30px 30px 0 0;
+    }
+
+    section.faqs {
+        .accordion-container {
+            width: 100%;
+
+            .accordion-card {
+                border-bottom: 2px solid #F1F1F1;
+                line-height: 1.625;
+
+                .accordion-head {
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: 0.2s all;
+                    font-size: 1.5rem; // 24px
+                    color: #928B8A;
+                    padding: 30px 37px;
+                    
+                    @include media-breakpoint-down(lg) {
+                        font-size: 1.125rem;
+                        padding: 24px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        padding: 16px 8px;
+                        font-size: 16px;
+                    }
+
+                    &.active {
+                        background: #6BF9EB;
+                        color: $white;
+                    }
+                }
+
+                .accordion-body {
+                    display: none;
+                    font-size: 20px;
+                    line-height: 2;
+                    padding: 30px 37px;
+                    color: #928B8A;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 1rem;
+                        padding: 24px 16px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 0.875rem;
+                    }
+
+                    a {
+                        color: $white !important;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+main.blogsPage {
+    background: imgUrl('blog-bg.png') center bottom;
+    background-size: contain;
+
+    .blogCard {
+        .mainImage {
+            height: 312px;
+        }
+    }
+}
+
+main.blogPost {
+    .description.column-count-2 {
+        column-count: 2;
+
+        @include media-breakpoint-down(lg) {
+            column-count: 1;
+        }
+    }
+}
+
+main.areasPage {
+    .suburb-search {
+        color: $white;
+        font-size: 12px;
+        box-shadow: none;
+        outline: none;
+        height: 44px;
+        font-weight: 600;
+
+        &::placeholder {
+            color: $white;
+        }
+    }
+
+    section.areatop {
+        padding: 4rem 0;
+
+        @media screen and (max-width: 576px) {
+            padding: 2.25rem 0;
+        }
+
+        .sub-heading {
+            font-size: 1.125rem;
+            color: #3c4a5a;
+            font-weight: normal;
+
+            @media screen and (max-width: 576px) {
+                font-size: 0.75rem;
+            }
+
+            a {
+                color: #3c4a5a;
+                font-weight: bold;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .alphbetwrap {
+            padding: 0;
+
+            .areas_allSearch {
+                display: inline-block;
+                background-color: $white;
+                text-align: center;
+                background-color: $white;
+                margin-right: 1.2rem;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 0.713rem 48px;
+                color: #3c4a5a;
+                cursor: pointer;
+                margin-right: 0.214rem;
+                border-radius: 2px;
+            }
+
+            .areas_alphabet {
+                display: inline-block;
+                background-color: $white;
+                color: #3c4a5a;
+                text-align: center;
+                margin-bottom: 0.5rem;
+                margin-right: 0.214rem;
+                cursor: pointer;
+                font-size: 1rem;
+                padding: 0.713rem 1.45rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: 0.35s all ease;
+                border-radius: 2px;
+
+                &:hover {
+                    background-color: $primary;
+                }
+            }
+
+            .active {
+                background-color: $primary;
+            }
+        }
+    }
+
+    section.areawrap {
+        padding: 3.25rem 0;
+
+        @media screen and (max-width: 576px) {
+            padding: 2.75rem 0;
+        }
+
+        .all-list {
+            font-size: 5rem;
+
+            @media screen and (max-width: 576px) {
+                font-size: 3.125rem;
+            }
+
+            span {
+                color: $black;
+            }
+        }
+
+        .arealistwrap {
+            .arealist {
+                .arealist_inner {
+                    background: #fafafa;
+                    padding: 51px;
+
+                    .suburb_link {
+                        text-decoration: none;
+                    }
+
+                    .alphabet-title {
+                        font-size: 1.875rem;
+                        color: #1b2039;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+            }
+
+
+            ul {
+                margin-bottom: 0;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 0 2rem;
+                padding-left: 0;
+
+                li {
+                    display: inline-block;
+                    padding: 0.25rem 0;
+
+                    a {
+                        font-size: 0.938rem;
+                        color: $black;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+
+                .show-more {
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+            .areahide {
+                display: none;
+            }
+
+            .mbottom {
+                margin-bottom: 7.2rem;
+
+                @media screen and (max-width: 576px) {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .seemore {
+                color: #959595;
+                font-style: italic;
+                text-decoration: underline;
+                font-weight: bold;
+                cursor: pointer;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .arealisthide {
+            display: none;
+        }
+
+        .areas_loadMoreWrap {
+            position: relative;
+            text-align: center;
+            padding-top: 3rem;
+
+            a {
+                width: auto;
+                display: inline-flex;
+            }
+        }
+    }
+
+    .areas_droplist {
+        position: relative;
+        z-index: 9;
+    }
+
+    .areas_droplist>.caption {
+        padding: 11px 24px;
+        border-radius: 0;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            top: 35%;
+            border: solid $primary;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            transition: all 0.35s ease;
+        }
+    }
+
+    .areas_droplist>.list {
+        position: absolute;
+        border: 1px solid #f2f2f2;
+        background: $white;
+        max-height: 250px;
+        overflow-y: scroll;
+        width: 100%;
+        display: none;
+    }
+
+    .areas_droplist>.list>.item {
+        padding: 11px 24px;
+        cursor: pointer;
+        color: $light-grey;
+        font-size: 14px;
+    }
+
+    .areas_droplist>.list>.item.selected {
+        font-weight: bold;
+    }
+
+    .areas_droplist.open>.caption {
+        border-radius: 3px 3px 0 0;
+        border-bottom: solid 1px #999;
+    }
+
+    .areas_droplist.open>.list {
+        display: block;
+        z-index: 99;
+    }
+}
+
+main.suburbPage,
+main.serviceInnerCommercialPage {
+    .cta {
+        .ctaCard {
+            border-radius: 28px;
+            position: relative;
+            background-color: $tertiary;
+            color: $white;
+            text-align: center;
+            padding: 65px 38px 90px;
+
+            @include media-breakpoint-down(sm) {
+                padding: 58px 24px;
+            }
+        }
+    }
+}
+
+main.serviceInnerResidentialPage,
+main.serviceInnerGeneralPage,
+main.servicePage {
+    section.faqsWrapper {
+        background: imgUrl('hive.png') #40e0d0;
+
+        .faqs {
+            background: linear-gradient(#40e0d0 0% 30%, rgba(0, 0, 0, 0) 70% 100%);
+
+            .accordion-container {
+                width: 100%;
+
+                .accordion-card {
+                    line-height: 1.625;
+                    background: #32D2C2;
+                    border-radius: 14px;
+                    color: $white;
+                    margin-bottom: 15px;
+
+                    .accordion-head {
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: 0.2s all;
+                        font-size: 1.125rem;
+                        padding: 30px 37px;
+
+                        @include media-breakpoint-up(md) {
+                            font-size: 1.5rem; // 24px
+                        }
+
+                        @include media-breakpoint-down(lg) {
+                            padding: 24px;
+                        }
+
+                        @include media-breakpoint-down(sm) {
+                            padding: 24px 16px;
+                        }
+                    }
+
+                    .accordion-body {
+                        display: none;
+                        font-size: 20px;
+                        line-height: 2;
+                        padding: 0 37px 30px;
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 0.875rem;
+                            padding: 0 16px 24px;
+                        }
+
+                        a {
+                            color: $white !important;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+main.serviceInnerResidentialPage {
+    table {
+        border-collapse: collapse;
+
+        tr:first-child td {
+            border-top: none;
+            /* Remove border for the topmost row */
+        }
+
+        td {
+            width: 50%;
+            text-align: center;
+            padding: 21px 83px;
+            vertical-align: top;
+            border-left: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+            &:first-child {
+                border-left: none;
+            }
+
+            @include media-breakpoint-down(lg) {
+                padding: 21px 16px;
+            }
+        }
+    }
+
+    section.serviceList {
+        border-radius: 30px 30px 0 0;
+
+        .serviceCard {
+            border-radius: 10px;
+            position: relative;
+            height: 470px;
+            overflow: hidden;
+
+            .inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 24px;
+                color: $white;
+                transition: 0.2s all;
+
+                .content {
+                    height: 0;
+                    overflow: hidden;
+                    transition: height 0.2s ease-out;
+                    padding-top: 24px;
+                }
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.6);
+
+                    .content {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main.faqPage {
+    .faq-search {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        box-shadow: none;
+        outline: none;
+        height: 44px;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.42);
+        }
+    }
+
+    section.faqs {
+        .accordion-container {
+            width: 100%;
+
+            .accordion-card {
+                border-bottom: 2px solid #F1F1F1;
+                line-height: 1.625;
+
+                .accordion-head {
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: 0.2s all;
+                    font-size: 1rem;
+                    color: #928B8A;
+                    padding: 27px 0;
+                }
+
+                .accordion-body {
+                    display: none;
+                    font-size: 0.875rem;
+                    line-height: 2;
+                    padding: 0 0 27px;
+                    color: #928B8A;
+
+                    a {
+                        color: $white !important;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+main.servicePage {
+    .serviceCard {
+        .mainImage {
+            height: 312px;
+        }
+    }
+}

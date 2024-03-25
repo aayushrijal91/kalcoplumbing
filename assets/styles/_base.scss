@@ -1,0 +1,145 @@
+@function imgUrl($file, $path: "background"){
+@return url("../assets/images/" + $path + "/" + $file) no-repeat;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    border: none;
+}
+
+html {
+    overflow-x: hidden;
+    background: $white;
+
+    &.nooverflow {
+        overflow-y: hidden;
+        height: 100%;
+    }
+}
+
+body {
+    font-family: $font-body;
+    color: $dark;
+    font-weight: 400;
+    margin: 180px auto 0;
+    font-size: 1rem;
+    line-height: 1.25;
+    overflow-x: hidden;
+
+    @include media-breakpoint-down(xl) {
+        margin-top: 224px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-top: 300px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 108px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn {
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+        height: 41px;
+    }
+}
+
+.emailBtn {
+    height: 59px;
+    width: 59px;
+
+    @include media-breakpoint-down(sm) {
+        height: 41px;
+        width: 41px;
+    }
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.column-count-2 {
+    column-count: 2;
+
+    @include media-breakpoint-down(sm) {
+        column-count: 1;
+    }
+
+    &.footer {
+        @include media-breakpoint-down(sm) {
+            column-count: 2;
+        }
+    }
+}
+
+.rounded-top-20 {
+    border-radius: 20px 20px 0 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.highlight-primary {
+    span {
+        color: $primary;
+    }
+}
+
+.highlight-white {
+    span {
+        color: $white;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+p,
+ul {
+    margin: 0;
+}
+
+.description {
+
+    p,
+    ul {
+        padding-bottom: 24px
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px !important;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $light;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $secondary;
+}

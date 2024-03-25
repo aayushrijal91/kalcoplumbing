@@ -1,0 +1,328 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+
+    nav {
+        .emailBtn {
+            height: 50px;
+            width: 50px;
+        }
+
+        .btn {
+            height: 50px;
+            padding: 6px 16px;
+        }
+    }
+}
+
+section.banner {
+    .bannerImg {
+        width: 100%;
+        border-radius: 38px;
+        overflow: hidden;
+        border: 1.251px solid #4B4B4B;
+
+        @include media-breakpoint-down(sm) {
+            border-radius: 23px;
+        }
+    }
+
+    p.rating {
+        font-size: 14px;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 8px;
+        }
+    }
+}
+
+// #menu-primary-menu {
+//     .nav-item.dropdown {
+//         position: relative;
+//         padding: 0 20px 0 0;
+
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             background: url('data:image/svg+xml,<svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.751953 1L3.25195 3L5.75195 1" stroke="#7CC5E5"/></svg>') center no-repeat;
+//             height: 16px;
+//             width: 16px;
+//             top: 50%;
+//             right: 0;
+//             transform: translateY(-50%);
+//         }
+
+//         .sub-menu.dropdown-menu {
+//             --bs-dropdown-min-width: 20rem;
+//             background-color: rgba(29, 50, 76, 0.6) !important;
+//             backdrop-filter: blur(10px);
+//             border: none !important;
+//             border-radius: 10px;
+//             top: 100%;
+//             left: 0;
+//             padding: 0 20px 16px;
+//             flex-direction: column;
+
+//             li {
+//                 border-bottom: 1px solid $primary;
+//             }
+//         }
+
+//         &:hover {
+//             .sub-menu.dropdown-menu {
+//                 display: flex;
+//             }
+//         }
+//     }
+// }
+
+#testimonialSlider {
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-slide {
+        height: inherit;
+        border-radius: 26px;
+        border: 1.001px solid #DCDCDC;
+        padding: 47px 30px 24px;
+        margin: 0 15px;
+
+        @include media-breakpoint-down(sm) {
+            padding: 24px;
+            margin: 0 6px;
+        }
+
+        .initials {
+            height: 46px;
+            width: 46px;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #6BF9EB;
+            border-radius: 100px;
+            color: #57D4C7;
+        }
+    }
+}
+
+// #menu-primary-menu-1 {
+//     .nav-item.dropdown {
+//         .sub-menu.dropdown-menu {
+//             display: flex;
+//             background: none;
+//             flex-direction: column;
+//             position: relative;
+//             border: none;
+//             padding-left: 16px;
+
+//             .nav-item a {
+//                 font-size: 16px !important;
+//             }
+//         }
+//     }
+// }
+
+// #slidingMenu {
+//     height: 100%;
+//     width: 100%;
+//     position: fixed;
+//     top: 0;
+//     background: $tertiary;
+//     z-index: 10000;
+//     transition: 0.3s all;
+//     transform: translateX(-100%);
+
+//     &.active {
+//         transform: translateX(0);
+//     }
+// }
+
+section.contactForm {
+    border-radius: 40px;
+    border: 1px solid #E8E8E8;
+    padding: 87px 37px 37px;
+
+    @include media-breakpoint-down(sm) {
+        border-radius: 21px;
+        padding: 31px 19px 25px;
+    }
+
+    .form-wrapper {
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.11);
+        background: $white;
+        display: flex;
+        align-items: center;
+        height: 62px;
+        overflow: hidden;
+
+        .wpcf7-form-control-wrap {
+            height: 100%;
+            width: 100%;
+        }
+
+        .icon {
+            width: 53px;
+            height: 61px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-control {
+            border: none;
+            background: none;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            color: rgba(0, 0, 0, 0.88);
+            height: 100%;
+            width: 100%;
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.33);
+            }
+        }
+    }
+
+    textarea {
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.11);
+        background: $white;
+        width: 100%;
+        padding: 24px;
+        color: rgba(0, 0, 0, 0.88);
+        outline: none;
+        box-shadow: none;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.33);
+        }
+    }
+
+    label,
+    select.form-control {
+        color: rgba(0, 0, 0, 0.33) !important;
+    }
+
+    button {
+        height: 62px;
+    }
+}
+
+#uteSlider {
+    .front-wheel {
+        position: absolute;
+        bottom: 8%;
+        right: 15%;
+
+        @include media-breakpoint-down(xl) {
+            width: auto !important;
+            height: 42% !important;
+            right: 15%;
+        }
+
+        @include media-breakpoint-down(lg) {
+            right: 16%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            right: 17%;
+        }
+    }
+
+    .rear-wheel {
+        position: absolute;
+        bottom: 8%;
+        left: 17.5%;
+
+        @include media-breakpoint-down(xl) {
+            width: auto !important;
+            height: 42% !important;
+            left: 18%;
+        }
+
+        @include media-breakpoint-down(lg) {
+            left: 18%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            left: 18.5%;
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#servicesListingSlider {
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-slide {
+        height: inherit;
+        margin: 0 6px;
+    }
+
+    .serviceCard {
+        border-radius: 10px;
+        position: relative;
+        height: 470px;
+        overflow: hidden;
+
+        .inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 24px;
+            color: $white;
+            transition: 0.2s all;
+
+            .title {
+                height: 42px;
+            }
+
+            .content {
+                height: 0;
+                overflow: hidden;
+                transition: height 0.2s ease-out;
+                padding-top: 24px;
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.6);
+
+                .content {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.rotating {
+    animation: rotate 3s linear infinite;
+}
+
+footer {
+    .footer-top {
+        border-bottom: 1px solid #2F2F33;
+        padding: 32px 0;
+    }
+}
