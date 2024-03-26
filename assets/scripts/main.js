@@ -4,6 +4,10 @@ jQuery(function ($) {
     var Engine = {
         ui: {
             misc: function () {
+                $('#toggleSlideOutMenu').on('click', function() {
+                    $("#slideOutMenu").slideToggle();
+                });
+
                 $('#partnersSlider').slick({
                     slidesToShow: 11,
                     slidesToScroll: 1,

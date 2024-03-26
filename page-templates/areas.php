@@ -27,8 +27,8 @@ $the_query = new WP_Query($args);
             <p class="text-light-grey fs-80 fw-800 text-center highlight-primary">Our <span>Areas</span></p>
 
             <div class="mx-auto my-5 col-xl-10 bg-dark-grey py-3 px-4 text-white">
-                <div class="row align-items-center">
-                    <div class="col-3">
+                <div class="row align-items-center gy-4">
+                    <div class="col-12 col-md-3">
                         <?php
                         if ($the_query->have_posts()) {
                             $count = 0;
@@ -63,14 +63,16 @@ $the_query = new WP_Query($args);
                         <?php } ?>
                     </div>
 
-                    <div class="col row align-items-center">
-                        <p class="col-auto">Selected Filters</p>
-                        <div class="col-auto">
-                            <p id="selected_suburb_filter" class="rounded-pill bg-light text-grey px-3 py-2 fs-14">All</p>
+                    <div class="col-12 col-md">
+                        <div class="row align-items-center">
+                            <p class="col-auto">Selected Filters</p>
+                            <div class="col-auto">
+                                <p id="selected_suburb_filter" class="rounded-pill bg-light text-grey px-3 py-2 fs-14">All</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <div class="d-flex align-items-center bg-grey px-3">
                             <input type="text" class="form-control px-0 border-0 bg-transparent rounded-0 suburb-search" id="suburb-search" placeholder="Search For Suburb...">
                             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">

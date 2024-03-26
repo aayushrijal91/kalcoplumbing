@@ -305,6 +305,10 @@ main.areasPage {
         cursor: pointer;
         position: relative;
 
+        @include media-breakpoint-down(sm) {
+            padding: 11px 0;
+        }
+
         &::after {
             content: "";
             position: absolute;
