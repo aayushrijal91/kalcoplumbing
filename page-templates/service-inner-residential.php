@@ -42,14 +42,14 @@ get_template_part('parts/section', 'banner');
                             <div class="row gx-3">
                                 <div class="col-6">
                                     <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                        <?= get_field('general', 'options')['phone_number'] ?>
+                                        Call Us
                                     </a>
                                 </div>
 
-                                <?php if (!empty(get_field('general', 'options')['contact_us_link']['url'])) : ?>
+                                <?php if (!empty($introduction['link']['url']) && !empty($introduction['link']['title'])) : ?>
                                     <div class="col-6">
-                                        <a href="<?= get_field('general', 'options')['contact_us_link']['url'] ?>" target="<?= get_field('general', 'options')['contact_us_link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                            <?= !empty(get_field('general', 'options')['book_online_link']['title']) ? get_field('general', 'options')['contact_us_link']['title'] : "Contact Us" ?>
+                                        <a href="<?= $introduction['link']['url'] ?>" target="<?= $introduction['link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
+                                            <?= $introduction['link']['title'] ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -71,7 +71,7 @@ get_template_part('parts/section', 'banner');
             <?php endif; ?>
 
             <?php if (!empty($comparison['title'])) : ?>
-                <article class="col-xl-10 mx-auto text-center text-secondary pt-3 lh-1_67">
+                <article class="col-xl-10 description mx-auto text-center text-secondary pt-3 lh-1_67">
                     <?= $comparison['description'] ?>
                 </article>
             <?php endif; ?>
@@ -161,7 +161,7 @@ get_template_part('parts/section', 'banner');
                                 <div class="d-flex flex-column h-100 justify-content-between py-4">
                                     <p class="highlight-primary text-center text-lg-start text-white fs-40 fw-800 lh-0_9"><?= get_field('why_us')['title'] ?></p>
 
-                                    <div class="row align-items-center gx-2">
+                                    <div class="row align-items-center gx-2 pt-4">
                                         <div class="col-auto">
                                             <a href="mailto:<?= get_field('general', 'options')['email_address'] ?>" class="btn btn-primary emailBtn rounded-circle d-flex justify-content-center align-items-center">
                                                 <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -227,14 +227,14 @@ get_template_part('parts/section', 'banner');
                     <p class="text-white highlight-primary text-white fs-60 text-center fw-800 lh-1 text-capitalize"><?= get_field('service_listing')['title'] ?></p>
 
                     <?php if (!empty(get_field('service_listing')['description'])) : ?>
-                        <article class="fs-14 text-white lh-1_67 text-center description py-4">
+                        <article class="fs-14 text-white lh-1_67 text-center description pt-4">
                             <?= get_field('service_listing')['description'] ?>
                         </article>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
-            <div class="col-md-8 col-lg-6 col-xl-4 mx-auto">
+            <div class="col-md-8 col-lg-6 col-xl-4 mx-auto pt-4">
                 <div class="row gx-3">
                     <div class="col-6">
                         <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
@@ -322,7 +322,7 @@ get_template_part('parts/section', 'banner');
                             <div class="row gx-3">
                                 <div class="col-6">
                                     <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                        <?= get_field('general', 'options')['phone_number'] ?>
+                                        Call Us
                                     </a>
                                 </div>
 
@@ -343,18 +343,18 @@ get_template_part('parts/section', 'banner');
         </section>
     <?php endif; ?>
 
-    <section class="faqsWrapper">
-        <div class="faqs py-6">
-            <div class="container">
-                <p class="text-light-grey highlight-white fs-60 fw-800 text-center">Our <span>Frequently Asked Questions</span></p>
+    <?php if (have_rows('faqs')) : ?>
+        <section class="faqsWrapper">
+            <div class="faqs py-6">
+                <div class="container">
+                    <p class="text-light-grey highlight-white fs-60 fw-800 text-center">Our <span>Frequently Asked Questions</span></p>
 
-                <div class="accordion-container mt-5 mt-md-7">
-                    <?php if (have_rows('faqs')) :
-                        $index = 1;
+                    <div class="accordion-container mt-5 mt-md-7">
+                        <?php $index = 1;
                         while (have_rows('faqs')) : the_row();
                             $question = get_sub_field('question');
                             $answer = get_sub_field('answer');
-                    ?>
+                        ?>
                             <div class="accordion-card">
                                 <div class="accordion-head<?= ($index == 1) ? " active" : ""; ?>">
                                     <div class="row g-0 w-100 justify-content-between">
@@ -382,15 +382,14 @@ get_template_part('parts/section', 'banner');
                                     <?= $answer ?>
                                 </div>
                             </div>
-                    <?php
+                        <?php
                             $index++;
-                        endwhile;
-                    endif;
-                    ?>
+                        endwhile; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>
