@@ -86,7 +86,7 @@ get_template_part('parts/section', 'banner');
                         <div class="row gx-3">
                             <div class="col-6">
                                 <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                    <?= get_field('general', 'options')['phone_number'] ?>
+                                    Call Us
                                 </a>
                             </div>
 
@@ -106,18 +106,18 @@ get_template_part('parts/section', 'banner');
         <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/chevron-primary.png" alt="<?= bloginfo('name') ?>">
     </section>
 
-    <section class="faqsWrapper">
-        <div class="faqs py-6">
-            <div class="container">
-                <p class="text-light-grey highlight-white fs-60 lh-1 fw-800 text-center">Our <span>Frequently Asked Questions</span></p>
+    <?php if (have_rows('faqs')) : ?>
+        <section class="faqsWrapper">
+            <div class="faqs py-6">
+                <div class="container">
+                    <p class="text-light-grey highlight-white fs-60 lh-1 fw-800 text-center">Our <span>Frequently Asked Questions</span></p>
 
-                <div class="accordion-container mt-5 mt-md-7">
-                    <?php if (have_rows('faqs')) :
-                        $index = 1;
+                    <div class="accordion-container mt-5 mt-md-7">
+                        <?php $index = 1;
                         while (have_rows('faqs')) : the_row();
                             $question = get_sub_field('question');
                             $answer = get_sub_field('answer');
-                    ?>
+                        ?>
                             <div class="accordion-card">
                                 <div class="accordion-head<?= ($index == 1) ? " active" : ""; ?>">
                                     <div class="row g-0 w-100 justify-content-between">
@@ -145,15 +145,14 @@ get_template_part('parts/section', 'banner');
                                     <?= $answer ?>
                                 </div>
                             </div>
-                    <?php
+                        <?php
                             $index++;
-                        endwhile;
-                    endif;
-                    ?>
+                        endwhile; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

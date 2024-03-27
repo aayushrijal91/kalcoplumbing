@@ -275,7 +275,7 @@ get_template_part('parts/section', 'banner');
                     </div>
 
                     <div class="col-12 col-lg-8 col-xl-9">
-                        <article class="bg-light-grey rounded-8 py-4 px-3 px-md-5 h-100 d-flex flex-column justify-content-between">
+                        <article class="bg-light-grey rounded-8 py-4 px-3 px-md-5 h-100">
                             <?php if (!empty($join_us['inner_title'])) : ?>
                                 <p class="text-white fs-40 lh-1 fw-800 highlight-primary"><?= $join_us['inner_title'] ?></p>
                             <?php endif; ?>
