@@ -5,7 +5,11 @@
         <div class="row align-items-center gx-xl-9 gy-4">
             <div class="col-12 col-lg-6">
                 <h1 class="text-white fs-60 fw-800 lh-1 text-capitalize text-center text-lg-start">
-                    <?= !empty(get_field('banner')['title']) ? get_field('banner')['title']  : get_the_title(); ?>
+                    <?php if (is_home()) : ?>
+                        Our Blogs
+                    <?php else : ?>
+                        <?= !empty(get_field('banner')['title']) ? get_field('banner')['title']  : get_the_title(); ?>
+                    <?php endif; ?>
                 </h1>
 
                 <p class="text-white fw-700 py-4 text-center text-lg-start">
@@ -61,6 +65,6 @@
             </div>
         </div>
     </div>
-    
+
     <img class="position-absolute end-0 bottom-0 d-none d-xl-block h-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/banner-line-above.png" alt="<?= get_bloginfo('name') ?>">
 </section>

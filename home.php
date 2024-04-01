@@ -51,7 +51,15 @@ get_template_part('parts/section', 'banner');
                             <p class="text-light fs-12 pt-4 pb-2"><?= $formatted_date ?></p>
                             <p class="text-primary fw-700 fs-20"><?= get_the_title(); ?></p>
 
-                            <p class="text-bright pt-2 pb-4"><?= get_field('short_description') ?></p>
+                            <p class="text-bright pt-2 pb-4">
+                                <?php
+                                $short_description = get_field('short_description');
+                                if (strlen($short_description) > 100) {
+                                    $short_description = substr($short_description, 0, 100) . '...';
+                                }
+                                echo $short_description;
+                                ?>
+                            </p>
 
                             <div class="d-flex justify-content-center">
                                 <a href="<?= get_the_permalink() ?>" class="btn btn-primary text-white rounded-pill d-inline-flex fs-20 fw-600 px-6">View</a>
