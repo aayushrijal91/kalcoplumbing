@@ -29,7 +29,11 @@
                         <div class="col-6">
                             <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">Call Now</a>
                         </div>
-                        <?php if (!empty(get_field('general', 'options')['book_online_link']['url'])) : ?>
+                        <?php if (is_page_template('page-templates/contact-us.php')) : ?>
+                            <div class="col-6">
+                                <a href="#contactForm" target="<?= get_field('general', 'options')['book_online_link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">Book Online</a>
+                            </div>
+                        <?php elseif (!empty(get_field('general', 'options')['book_online_link']['url'])) : ?>
                             <div class="col-6">
                                 <a href="<?= get_field('general', 'options')['book_online_link']['url'] ?>" target="<?= get_field('general', 'options')['book_online_link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600"><?= !empty(get_field('general', 'options')['book_online_link']['title']) ? get_field('general', 'options')['book_online_link']['title'] : "Book Online" ?></a>
                             </div>

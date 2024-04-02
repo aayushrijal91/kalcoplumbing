@@ -71,7 +71,7 @@ get_template_part('parts/section', 'banner');
             <?php endif; ?>
 
             <?php if (!empty($comparison['title'])) : ?>
-                <article class="col-xl-10 description mx-auto text-center text-secondary pt-3 lh-1_67">
+                <article class="col-xl-10 description mx-auto text-center text-dark pt-3 lh-1_67">
                     <?= $comparison['description'] ?>
                 </article>
             <?php endif; ?>
