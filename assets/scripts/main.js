@@ -236,7 +236,7 @@ jQuery(document).ready(function ($) {
 
         // AJAX request to load filtered FAQs
         $.ajax({
-            url: "http://localhost:3000/kalco-plumbing/wp-admin/admin-ajax.php",
+            url: window.location.origin + "/wp-admin/admin-ajax.php",
             type: 'POST',
             data: {
                 action: 'filter_faqs',
@@ -255,7 +255,7 @@ jQuery(document).ready(function ($) {
 
         // AJAX request to load filtered FAQs
         $.ajax({
-            url: "http://localhost:3000/kalco-plumbing/wp-admin/admin-ajax.php",
+            url: window.location.origin + "/wp-admin/admin-ajax.php",
             type: 'POST',
             data: {
                 action: 'filter_faqs',

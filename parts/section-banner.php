@@ -7,6 +7,8 @@
                 <h1 class="text-white fs-60 fw-800 lh-1 text-capitalize text-center text-lg-start">
                     <?php if (is_home()) : ?>
                         Our Blogs
+                    <?php elseif (is_page_template('page-templates/suburb.php')) : ?>
+                        Plumbers in <?= get_the_title() ?>
                     <?php else : ?>
                         <?= !empty(get_field('banner')['title']) ? get_field('banner')['title']  : get_the_title(); ?>
                     <?php endif; ?>
