@@ -81,6 +81,7 @@ get_template_part('parts/section', 'banner');
             while (have_rows('plumbing_service')) : the_row(); ?>
                 <section class="bg-primary rounded-40 px-4 position-relative mt-4 mt-md-5">
                     <img class="position-absolute h-100 start-0 top-0 d-none d-xl-block" src="<?= get_template_directory_uri() ?>/assets/images/lib/quality-service-bg.png" alt="plumber">
+                    <img class="position-absolute w-100 start-0 bottom-0 d-md-none" src="<?= get_template_directory_uri() ?>/assets/images/icons/mobile-cta-bg.png" alt="plumber">
 
                     <div class="row align-items-end position-relative">
                         <div class="col-12 col-lg-6 text-center order-2 order-lg-1">
@@ -136,7 +137,7 @@ get_template_part('parts/section', 'banner');
             <div class="row align-items-center position-relative gy-5">
                 <?php if (!empty($serviceCta['title'])) : ?>
                     <div class="col-12 col-lg-4 col-xl-3">
-                        <p class="highlight-primary text-white text-center text-lg-start fs-48 fw-800 lh-0_9"><?= $serviceCta['title'] ?></p>
+                        <p class="highlight-primary text-white text-center text-lg-start fs-54 fw-800 lh-0_9"><?= $serviceCta['title'] ?></p>
                     </div>
                 <?php endif; ?>
 

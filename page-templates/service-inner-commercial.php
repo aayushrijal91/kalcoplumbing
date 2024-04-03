@@ -62,6 +62,7 @@ get_template_part('parts/section', 'banner');
             ?>
                 <section class="bg-primary rounded-40 px-4 position-relative mt-5">
                     <img class="position-absolute h-100 start-0 top-0 d-none d-xl-block" src="<?= get_template_directory_uri() ?>/assets/images/lib/quality-service-bg.png" alt="plumber">
+                    <img class="position-absolute w-100 start-0 bottom-0 d-md-none" src="<?= get_template_directory_uri() ?>/assets/images/icons/mobile-cta-bg.png" alt="plumber">
 
                     <div class="row position-relative">
                         <?php if (!empty(get_sub_field('image')['url'])) : ?>

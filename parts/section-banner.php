@@ -29,7 +29,7 @@
                         <div class="col-6">
                             <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">Call Now</a>
                         </div>
-                        <?php if (is_page_template('page-templates/contact-us.php')) : ?>
+                        <?php if (is_page_template('page-templates/contact-us.php') || is_front_page()) : ?>
                             <div class="col-6">
                                 <a href="#contactForm" target="<?= get_field('general', 'options')['book_online_link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">Book Online</a>
                             </div>

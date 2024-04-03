@@ -9,12 +9,13 @@ get_template_part('parts/section', 'banner');
 
 <main class="contactUsPage">
     <div class="container">
-    <section class="bg-primary rounded-40 px-4 position-relative mt-4 mt-md-5">
+        <section class="bg-primary rounded-40 px-4 position-relative mt-4 mt-md-5">
             <?php $introduction = get_field('introduction'); ?>
             <img class="position-absolute h-100 start-0 top-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/lib/quality-service-bg.png" alt="plumber">
+            <img class="position-absolute w-100 start-0 bottom-0 d-md-none" src="<?= get_template_directory_uri() ?>/assets/images/icons/mobile-cta-bg.png" alt="plumber">
 
             <div class="row align-items-end position-relative">
-            <div class="col-12 col-md-6 text-center order-2 order-md-1">
+                <div class="col-12 col-md-6 text-center order-2 order-md-1">
                     <img src="<?= $introduction['image']['url'] ?>" alt="<?= $introduction['image']['alt'] ?>">
                 </div>
 
