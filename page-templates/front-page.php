@@ -26,6 +26,7 @@ get_template_part('parts/section', 'banner');
     <section class="about bg-primary position-relative">
         <img class="position-absolute bottom-0 start-0" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="about">
         <img class="position-absolute bottom-0 d-none d-xl-block end-0 h-100" src="<?= get_template_directory_uri() ?>/assets/images/lib/about.png" alt="about">
+        <img class="position-absolute bottom-0 d-md-none start-0 w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/mobile-homepage-about.png" alt="about">
 
         <div class="container position-relative">
             <div class="row align-items-lg-end ">
@@ -70,7 +71,7 @@ get_template_part('parts/section', 'banner');
                 </div>
 
                 <div class="col-auto col-lg-6 col-xl-auto">
-                    <img src="<?= get_template_directory_uri() ?>/assets/images/lib/plumber.png" class="mt-xl-n4" alt="<?= bloginfo('name') ?>">
+                    <img src="<?= get_template_directory_uri() ?>/assets/images/lib/plumber.png" class="mt-xl-n4 ms-xxl-n3" alt="<?= bloginfo('name') ?>">
                 </div>
             </div>
         </div>
