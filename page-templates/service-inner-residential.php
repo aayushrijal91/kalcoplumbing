@@ -159,7 +159,7 @@ get_template_part('parts/section', 'banner');
                         <?php if (get_field('why_us')['title']) : ?>
                             <div class="col-md-6 col-xl-3">
                                 <div class="d-flex flex-column h-100 justify-content-between py-4">
-                                    <p class="highlight-primary text-center text-lg-start text-white fs-40 fw-800 lh-0_9"><?= get_field('why_us')['title'] ?></p>
+                                    <p class="highlight-primary text-center text-lg-start text-white fs-40 fw-800 lh-0_9 text-capitalize"><?= get_field('why_us')['title'] ?></p>
 
                                     <div class="row align-items-center gx-2 pt-4">
                                         <div class="col-auto">

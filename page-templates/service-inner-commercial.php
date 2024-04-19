@@ -241,7 +241,7 @@ get_template_part('parts/section', 'banner');
                 <div class="row position-relative gy-4">
                     <div class="col-12 col-lg-4 col-xl-3">
                         <div class="h-100 d-flex flex-column justify-content-between">
-                            <p class="highlight-primary text-white fs-60 fw-800 lh-0_9 text-center text-lg-start"><?= $join_us['hero_title'] ?></p>
+                            <p class="highlight-primary text-white fs-60 fw-800 lh-0_9 text-center text-lg-start text-capitalize"><?= $join_us['hero_title'] ?></p>
     
                             <div class="row justify-content-center justify-content-xl-start align-items-center gx-2 pt-4">
                                 <div class="col-auto">
