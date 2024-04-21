@@ -4,7 +4,7 @@ jQuery(function ($) {
     var Engine = {
         ui: {
             misc: function () {
-                $('#toggleSlideOutMenu').on('click', function() {
+                $('#toggleSlideOutMenu').on('click', function () {
                     $("#slideOutMenu").slideToggle();
                 });
 
@@ -198,7 +198,21 @@ jQuery(function ($) {
                         else
                             $(".noresult").show();
                     }
-                })
+                });
+
+                $('#extraContentSlider').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    autoplay: true,
+                });
+
+                $('.whyUsSlider').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    autoplay: true,
+                });
             }, // end misc
         }, // end ui
         //utils: {

@@ -195,30 +195,53 @@ get_template_part('parts/section', 'banner');
                         <?php endif; ?>
 
                         <?php
-                        if (have_rows('why_us_list')) :
-                            while (have_rows('why_us_list')) : the_row(); ?>
-                                <div class="col-md-6 col-xl-3">
-                                    <article class="bg-alternate-grey rounded-8 py-4 px-3 h-100 d-flex flex-column justify-content-between">
+                        if (have_rows('why_us_list')) : ?>
+                            <div class="col-12 col-md-6 col-xl-9">
+                                <div class="whyUsSlider">
+                                    <?php while (have_rows('why_us_list')) : the_row(); ?>
                                         <div>
-                                            <div class="bg-primary d-flex justify-content-center align-items-center rounded-circle" style="width: 35px; height: 35px;">
-                                                <img src="<?= get_sub_field('icon')['url'] ?>" alt="<?= get_sub_field('icon')['alt'] ?>">
-                                            </div>
+                                            <article class="bg-alternate-grey rounded-8 py-4 px-3 h-100 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <div class="bg-primary d-flex justify-content-center align-items-center rounded-circle" style="width: 35px; height: 35px;">
+                                                        <img src="<?= get_sub_field('icon')['url'] ?>" alt="<?= get_sub_field('icon')['alt'] ?>">
+                                                    </div>
 
-                                            <div class="description pt-4">
-                                                <p class="text-white fs-24 fw-800 lh-1"><?= get_sub_field('title') ?></p>
-                                                <p class="text-white fs-14"><?= get_sub_field('description') ?></p>
-                                            </div>
+                                                    <div class="description pt-4">
+                                                        <p class="text-white fs-24 fw-800 lh-1"><?= get_sub_field('title') ?></p>
+                                                        <p class="text-white fs-14"><?= get_sub_field('description') ?></p>
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                    </article>
+                                    <?php endwhile; ?>
                                 </div>
-                        <?php endwhile;
-                        endif;
-                        ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </section>
             </div>
         </div>
     </section>
+
+    <?php if (have_rows('extra_content')) : ?>
+        <section class="extraContent pb-5 pb-md-7">
+            <div class="container">
+                <div class="" id="extraContentSlider">
+                    <?php while (have_rows('extra_content')) : the_row(); ?>
+                        <div class="bg-primary rounded-30 text-white pt-5 pb-7 px-4 text-center position-relative">
+                            <img class="position-absolute bottom-0 start-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
+
+                            <p class="fs-45 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
+
+                            <article class="description lh-1_67 pt-4 py-md-5 text-lighter position-relative">
+                                <?= get_sub_field('content') ?>
+                            </article>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <section class="serviceList bg-dark-grey pt-6 pt-md-7">
         <div class="container">
