@@ -24,7 +24,7 @@ get_template_part('parts/section', 'banner');
                     <?php endif; ?>
 
                     <div class="col-12 col-xl-6 py-5 py-md-7 order-1 order-xl-2">
-                        <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
+                        <p class="text-dark-grey fw-800 fs-60 lh-1 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
 
                         <?php if (!empty($introduction['description'])) : ?>
                             <article class="description lh-1_67 text-dark fw-500 py-4">
@@ -302,7 +302,7 @@ get_template_part('parts/section', 'banner');
 
                 <div id="extraContentSlider">
                     <?php while (have_rows('extra_content')) : the_row(); ?>
-                        <div class="bg-primary rounded-30 text-white pt-5 pb-7 px-4 text-center position-relative">
+                        <div class="bg-primary rounded-30 text-white pt-5 pb-4 pb-md-7 px-4 text-center position-relative">
                             <img class="position-absolute bottom-0 start-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
 
                             <p class="fs-45 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>

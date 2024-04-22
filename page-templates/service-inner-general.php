@@ -25,7 +25,7 @@ get_template_part('parts/section', 'banner');
                     <?php endif; ?>
 
                     <div class="col-lg-6 py-5 py-md-7 order-1 order-md-2">
-                        <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
+                        <p class="text-dark-grey fw-800 fs-60 lh-1 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
 
                         <?php if (!empty($introduction['description'])) : ?>
                             <article class="description lh-1_67 text-dark fw-500 py-4">

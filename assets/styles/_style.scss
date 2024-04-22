@@ -484,6 +484,48 @@ main.serviceInnerResidentialPage {
             vertical-align: top;
             border-left: 1px solid rgba(255, 255, 255, 0.07);
             border-top: 1px solid rgba(255, 255, 255, 0.07);
+            
+            article {
+                color: $white;
+                font-size: 18px;
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 16px;
+                }
+
+                h1, h2, h3, h4, h5, p {
+                    font-size: 18px;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 16px;
+                    }
+                }
+
+                h6 {
+                    color: $grey;
+                    font-size: 9px;
+                    padding-top: 8px;
+                }
+
+                &.heading {
+                    font-size: 33px !important;
+                    line-height: 1;
+                    font-weight: 700;
+
+                    h1, h2, h3, h4, h5, p {
+                        font-size: 33px;
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 24px;
+                        }
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 24px !important;
+                    }
+                }
+            }
+
 
             &:first-child {
                 border-left: none;

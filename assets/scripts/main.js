@@ -205,6 +205,22 @@ jQuery(function ($) {
                     slidesToScroll: 1,
                     arrows: false,
                     autoplay: true,
+                    responsive: [
+                        {
+                            breakpoint: 1100,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 900,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
                 });
 
                 $('.whyUsSlider').slick({
@@ -212,6 +228,15 @@ jQuery(function ($) {
                     slidesToScroll: 1,
                     arrows: false,
                     autoplay: true,
+                    responsive: [
+                        {
+                            breakpoint: 1100,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
                 });
             }, // end misc
         }, // end ui

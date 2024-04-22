@@ -30,7 +30,7 @@ get_template_part('parts/section', 'banner');
                     </div>
 
                     <div class="col-lg-6">
-                        <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
+                        <p class="text-dark-grey fw-800 fs-60 lh-1 highlight-primary text-capitalize"><?= $introduction['title'] ?></p>
 
                         <?php if (!empty($introduction['description'])) : ?>
                             <article class="description lh-1_67 text-dark fw-500 py-4">
@@ -78,79 +78,70 @@ get_template_part('parts/section', 'banner');
 
             <div class="rounded-20 rounded-md-40 bg-dark-grey overflow-hidden mt-6">
                 <div class="text-white text-center d-md-none">
-                    <p class="bg-primary fs-24 fw-800 py-3">Electric</p>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">Cheaper to install and replace</p>
-                    </div>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">Simpler installation process</p>
-                    </div>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">There are more *efficient electric hot water systems being made on the market.</p>
-                        <p class="fs-9 text-grey pt-3">*Instant electric systems can match the energy-efficiency of gas hot water systems but they require 3-phase power, making them more suitable for commercial properties over residences that often have single phase power.</p>
-                    </div>
+                    <?php if (have_rows('comparison_table')) :
+                        $rowsSm = 0;
+                    ?>
+                        <?php while (have_rows('comparison_table')) : the_row(); ?>
+                            <?php if ($rowsSm == 0) : ?>
+                                <article class="bg-primary fs-24 fw-800 py-3"><?= get_sub_field('column_1') ?></article>
+                            <?php else : ?>
+                                <div class="py-4 px-3">
+                                    <p class="fs-18"><?= get_sub_field('column_1') ?></p>
+                                </div>
+                            <?php endif; ?>
+                        <?php
+                            $rowsSm++;
+                        endwhile; ?>
+                    <?php endif; ?>
+                    
+                    <?php if (have_rows('comparison_table')) :
+                        $rowsSm = 0;
+                    ?>
+                        <?php while (have_rows('comparison_table')) : the_row(); ?>
+                            <?php if ($rowsSm == 0) : ?>
+                                <article class="bg-primary fs-24 fw-800 py-3 rounded-top-20"><?= get_sub_field('column_2') ?></article>
+                            <?php else : ?>
+                                <div class="py-4 px-3">
+                                    <p class="fs-18"><?= get_sub_field('column_2') ?></p>
+                                </div>
+                            <?php endif; ?>
+                        <?php
+                            $rowsSm++;
+                        endwhile; ?>
+                    <?php endif; ?>
                 </div>
 
-                <div class="text-white text-center d-md-none">
-                    <p class="bg-primary fs-24 fw-800 py-3 rounded-top-20">Gas</p>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">Cheaper running costs & smaller bills</p>
-                    </div>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">No time of-use tariffs</p>
-                    </div>
-
-                    <div class="py-4 px-3">
-                        <p class="fs-18">More energy-efficient and eco-conscious</p>
-                    </div>
-                </div>
-
-                <table class="w-100 d-none d-md-block">
-                    <thead>
-                        <tr class="bg-tertiary text-white fs-33 fw-700 lh-1">
-                            <td>Electric</td>
-                            <td>Gas</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="text-white fs-18">Cheaper to install and replace</p>
-                            </td>
-
-                            <td>
-                                <p class="text-white fs-18">Cheaper running costs & small bills</p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p class="text-white fs-18">Simpler installation process</p>
-                            </td>
-
-                            <td>
-                                <p class="text-white fs-18">No time of-use tariffs</p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p class="text-white fs-18">There are more *efficient electric hot water systems being made on the market.</p>
-                                <p class="text-grey fs-9 pt-2 pb-7">*Instant electric systems can match the energy-efficiency of gas hot water systems but they require 3-phase power, making them more suitable for commercial properties over residences that often have single phase power.</p>
-                            </td>
-
-                            <td>
-                                <p class="text-white fs-18">More energy-efficient and eco-conscious.</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php if (have_rows('comparison_table')) :
+                    $rows = 0;
+                ?>
+                    <table class="w-100 d-none d-md-block">
+                        <tbody>
+                            <?php while (have_rows('comparison_table')) : the_row(); ?>
+                                <?php if ($rows == 0) : ?>
+                                    <tr class="bg-tertiary">
+                                        <td>
+                                            <article class="heading"><?= get_sub_field('column_1') ?></article>
+                                        </td>
+                                        <td>
+                                            <article class="heading"><?= get_sub_field('column_2') ?></article>
+                                        </td>
+                                    </tr>
+                                <?php else : ?>
+                                    <tr>
+                                        <td>
+                                            <article><?= get_sub_field('column_1') ?></article>
+                                        </td>
+                                        <td>
+                                            <article><?= get_sub_field('column_2') ?></article>
+                                        </td>
+                                    </tr>
+                                <?php endif; ?>
+                            <?php
+                                $rows++;
+                            endwhile; ?>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
 
                 <section class="bg-light-grey rounded-20 rounded-md-40 py-5 px-4 px-md-5 py-md-4 position-relative orverflow-hidden">
                     <img class="position-absolute h-100 top-0 end-0 d-none d-lg-block" src="<?= get_template_directory_uri() ?>/assets/images/lib/arrow-service.png" alt="<?= bloginfo('name') ?>">
@@ -166,7 +157,7 @@ get_template_part('parts/section', 'banner');
                                         </article>
                                     <?php endif; ?>
 
-                                    <div class="row align-items-center gx-2 pt-4">
+                                    <div class="row align-items-center justify-content-center justify-content-lg-start gx-2 pt-4">
                                         <div class="col-auto">
                                             <a href="mailto:<?= get_field('general', 'options')['email_address'] ?>" class="btn btn-primary emailBtn rounded-circle d-flex justify-content-center align-items-center">
                                                 <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +228,7 @@ get_template_part('parts/section', 'banner');
 
                 <div id="extraContentSlider">
                     <?php while (have_rows('extra_content')) : the_row(); ?>
-                        <div class="bg-primary rounded-30 text-white pt-5 pb-7 px-4 text-center position-relative">
+                        <div class="bg-primary rounded-30 text-white pt-5 pb-4 pb-md-7 px-4 text-center position-relative">
                             <img class="position-absolute bottom-0 start-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
 
                             <p class="fs-45 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
