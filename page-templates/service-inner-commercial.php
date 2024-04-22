@@ -242,7 +242,7 @@ get_template_part('parts/section', 'banner');
                     <div class="col-12 col-lg-4 col-xl-3">
                         <div class="h-100 d-flex flex-column justify-content-between">
                             <p class="highlight-primary text-white fs-60 fw-800 lh-0_9 text-center text-lg-start text-capitalize"><?= $join_us['hero_title'] ?></p>
-    
+
                             <div class="row justify-content-center justify-content-xl-start align-items-center gx-2 pt-4">
                                 <div class="col-auto">
                                     <a href="mailto:<?= get_field('general', 'options')['email_address'] ?>" class="btn btn-secondary emailBtn rounded-circle d-flex justify-content-center align-items-center">
@@ -252,7 +252,7 @@ get_template_part('parts/section', 'banner');
                                         </svg>
                                     </a>
                                 </div>
-    
+
                                 <div class="col-auto">
                                     <a class="btn btn-secondary rounded-pill text-white fw-600 px-4 gap-2" href="tel:<?= get_field('general', 'options')['phone_number'] ?>">
                                         <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,7 +267,7 @@ get_template_part('parts/section', 'banner');
                                                 </clipPath>
                                             </defs>
                                         </svg>
-    
+
                                         <?= get_field('general', 'options')['phone_number'] ?>
                                     </a>
                                 </div>
@@ -291,6 +291,36 @@ get_template_part('parts/section', 'banner');
                 </div>
             </section>
         </div>
+    <?php endif; ?>
+
+    <?php if (have_rows('extra_content')) : ?>
+        <section class="extraContent pb-5 pb-md-7">
+            <div class="container">
+                <?php if (!empty(get_field('extra_content_title'))) : ?>
+                    <p class="text-center highlight-primary fs-48 fw-800 text-capitalize pb-5"><?= get_field('extra_content_title') ?></p>
+                <?php endif; ?>
+
+                <div id="extraContentSlider">
+                    <?php while (have_rows('extra_content')) : the_row(); ?>
+                        <div class="bg-primary rounded-30 text-white pt-5 pb-7 px-4 text-center position-relative">
+                            <img class="position-absolute bottom-0 start-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
+
+                            <p class="fs-45 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
+
+                            <article class="description lh-1_67 pt-4 py-md-5 text-lighter position-relative">
+                                <?= get_sub_field('content') ?>
+                            </article>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+
+                <?php if (!empty(get_field('extra_content_description'))) : ?>
+                    <article class="description fs-18 text-center pt-5 pt-md-7 lh-1_67 fw-500">
+                        <?= get_field('extra_content_description') ?>
+                    </article>
+                <?php endif; ?>
+            </div>
+        </section>
     <?php endif; ?>
 </main>
 

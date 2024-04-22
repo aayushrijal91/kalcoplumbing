@@ -35,7 +35,7 @@ main.homepage {
                     font-size: 1.5rem; // 24px
                     color: #928B8A;
                     padding: 30px 37px;
-                    
+
                     @include media-breakpoint-down(lg) {
                         font-size: 1.125rem;
                         padding: 24px;
@@ -438,6 +438,22 @@ main.servicePage {
     }
 }
 
+main.serviceInnerResidentialPage,
+main.serviceInnerCommercialPage {
+    section.extraContent {
+        #extraContentSlider {
+            .slick-track {
+                display: flex;
+            }
+
+            .slick-slide {
+                height: inherit;
+                margin: 0 6px;
+            }
+        }
+    }
+}
+
 main.serviceInnerResidentialPage {
     table {
         border-collapse: collapse;
@@ -478,18 +494,6 @@ main.serviceInnerResidentialPage {
         }
     }
 
-    section.extraContent {
-        #extraContentSlider {
-            .slick-track {
-                display: flex;
-            }
-
-            .slick-slide {
-                height: inherit;
-                margin: 0 6px;
-            }
-        }
-    }
     section.serviceList {
         border-radius: 30px 30px 0 0;
 

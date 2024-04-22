@@ -160,6 +160,11 @@ get_template_part('parts/section', 'banner');
                             <div class="col-md-6 col-xl-3">
                                 <div class="d-flex flex-column h-100 justify-content-between py-4">
                                     <p class="highlight-primary text-center text-lg-start text-white fs-40 fw-800 lh-0_9 text-capitalize"><?= get_field('why_us')['title'] ?></p>
+                                    <?php if (!empty(get_field('why_us')['description'])) : ?>
+                                        <article class="description text-white pt-4">
+                                            <?= get_field('why_us')['description'] ?>
+                                        </article>
+                                    <?php endif; ?>
 
                                     <div class="row align-items-center gx-2 pt-4">
                                         <div class="col-auto">
@@ -226,7 +231,11 @@ get_template_part('parts/section', 'banner');
     <?php if (have_rows('extra_content')) : ?>
         <section class="extraContent pb-5 pb-md-7">
             <div class="container">
-                <div class="" id="extraContentSlider">
+                <?php if (!empty(get_field('extra_content_title'))) : ?>
+                    <p class="text-center highlight-primary fs-48 fw-800 text-capitalize pb-5"><?= get_field('extra_content_title') ?></p>
+                <?php endif; ?>
+
+                <div id="extraContentSlider">
                     <?php while (have_rows('extra_content')) : the_row(); ?>
                         <div class="bg-primary rounded-30 text-white pt-5 pb-7 px-4 text-center position-relative">
                             <img class="position-absolute bottom-0 start-0 d-none d-md-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
@@ -239,6 +248,12 @@ get_template_part('parts/section', 'banner');
                         </div>
                     <?php endwhile; ?>
                 </div>
+
+                <?php if (!empty(get_field('extra_content_description'))) : ?>
+                    <article class="description fs-18 text-center pt-5 pt-md-7 lh-1_67 fw-500">
+                        <?= get_field('extra_content_description') ?>
+                    </article>
+                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
