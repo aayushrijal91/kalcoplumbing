@@ -188,7 +188,7 @@ get_template_part('parts/section', 'banner');
                                     <img class="position-absolute top-0 end-0 rotate-180 d-none d-xl-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
                                 <?php endif; ?>
 
-                                <p class="fs-70 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
+                                <p class="fs-54 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
 
                                 <article class="description lh-1_67 pt-4 py-md-5 text-lighter position-relative">
                                     <?= get_sub_field('description') ?>

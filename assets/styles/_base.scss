@@ -131,8 +131,21 @@ ul {
 
         li {
             list-style: disc;
-            list-style-position: inside;
+            list-style-position: outside;
         }
+    }
+
+    ol {
+        padding-bottom: 24px;
+
+        li {
+            list-style: auto;
+            list-style-position: outside;
+        }
+    }
+
+    ul, ol {
+        text-align: start !important;
     }
 
     @include media-breakpoint-down(sm) {
