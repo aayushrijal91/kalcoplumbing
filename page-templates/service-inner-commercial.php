@@ -76,9 +76,9 @@ get_template_part('parts/section', 'banner');
                         <div class="col-xl-6 col-xxl-5 py-5 order-1 order-xl-2">
                             <div class="h-100 d-flex align-items-center">
                                 <div>
-                                    <p class="text-white fs-54 fw-700 text-capitalize lh-0_9 text-center text-xl-start"><?= get_sub_field('title') ?></p>
+                                    <p class="text-secondary fs-54 fw-700 text-capitalize lh-0_9 text-center text-xl-start"><?= get_sub_field('title') ?></p>
 
-                                    <article class="lh-1_67 description pt-4 text-center text-xl-start"><?= get_sub_field('description') ?></article>
+                                    <article class="lh-1_67 description pt-4 text-center text-xl-start text-dark-grey"><?= get_sub_field('description') ?></article>
 
                                     <div class="row justify-content-center justify-content-xl-start align-items-center gx-2">
                                         <div class="col-auto">
@@ -188,7 +188,7 @@ get_template_part('parts/section', 'banner');
                                     <img class="position-absolute top-0 end-0 rotate-180 d-none d-xl-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/homepage-about.png" alt="<?= bloginfo('name') ?>">
                                 <?php endif; ?>
 
-                                <p class="fs-54 fw-700 lh-1 position-relative"><?= get_sub_field('title') ?></p>
+                                <p class="fs-54 fw-700 lh-1 position-relative text-secondary"><?= get_sub_field('title') ?></p>
 
                                 <article class="description lh-1_67 pt-4 py-md-5 text-lighter position-relative">
                                     <?= get_sub_field('description') ?>
