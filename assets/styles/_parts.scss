@@ -20,6 +20,8 @@ header {
 section.banner {
     .bannerImg {
         width: 100%;
+        height: 100%;
+        min-height: 508px;
         border-radius: 38px;
         overflow: hidden;
         border: 1.251px solid #4B4B4B;
@@ -37,46 +39,6 @@ section.banner {
         }
     }
 }
-
-// #menu-primary-menu {
-//     .nav-item.dropdown {
-//         position: relative;
-//         padding: 0 20px 0 0;
-
-//         &::after {
-//             content: '';
-//             position: absolute;
-//             background: url('data:image/svg+xml,<svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.751953 1L3.25195 3L5.75195 1" stroke="#7CC5E5"/></svg>') center no-repeat;
-//             height: 16px;
-//             width: 16px;
-//             top: 50%;
-//             right: 0;
-//             transform: translateY(-50%);
-//         }
-
-//         .sub-menu.dropdown-menu {
-//             --bs-dropdown-min-width: 20rem;
-//             background-color: rgba(29, 50, 76, 0.6) !important;
-//             backdrop-filter: blur(10px);
-//             border: none !important;
-//             border-radius: 10px;
-//             top: 100%;
-//             left: 0;
-//             padding: 0 20px 16px;
-//             flex-direction: column;
-
-//             li {
-//                 border-bottom: 1px solid $primary;
-//             }
-//         }
-
-//         &:hover {
-//             .sub-menu.dropdown-menu {
-//                 display: flex;
-//             }
-//         }
-//     }
-// }
 
 #testimonialSlider {
     .slick-track {

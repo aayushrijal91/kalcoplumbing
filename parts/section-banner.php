@@ -63,11 +63,7 @@
             </div>
 
             <div class="col-12 col-lg-6 pe-xxl-8">
-                <?php if (!empty(get_field('banner')['image'])) : ?>
-                    <img class="bannerImg" src="<?= get_field('banner')['image']['url'] ?>" alt="<?= get_field('banner')['image']['alt'] ?>">
-                <?php else : ?>
-                    <img class="bannerImg" src="<?= home_url() ?>/wp-content/uploads/2024/03/c771f9b86fc7d3f0c9b761488d674ec9.gif" alt="<?= bloginfo('name') ?>">
-                <?php endif; ?>
+                    <iframe class="bannerImg" src="https://www.youtube.com/embed/uQLCKs0lg6A?&autoplay=1&mute=1&loop=1&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>
