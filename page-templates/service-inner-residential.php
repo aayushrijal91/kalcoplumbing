@@ -299,7 +299,7 @@ get_template_part('parts/section', 'banner');
                                 <img class="h-100 w-100 object-fit-cover" src="<?= get_sub_field('image')['url'] ?>" alt="<?= get_sub_field('image')['alt'] ?>">
 
                                 <div class="inner d-flex justify-content-end flex-column align-items-center">
-                                    <p class="title d-flex justify-content-center align-items-center border border-white rounded-pill px-4 py-2 <?= strlen(get_sub_field('title')) > 16 ? 'fs-16' : 'fs-24' ?> fw-600 text-center lh-1"><?= get_sub_field('title') ?></p>
+                                    <p class="title d-flex justify-content-center align-items-center border border-white rounded-pill px-4 py-2 fs-16 fw-600 text-center lh-1"><?= get_sub_field('title') ?></p>
 
                                     <p class="content text-center fs-14">
                                         <?= get_sub_field('description') ?>
