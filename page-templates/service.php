@@ -5,6 +5,17 @@
 */
 get_header();
 get_template_part('parts/section', 'banner');
+function removeLastWordIfService($string)
+{
+    $words = explode(' ', trim($string));
+    $lastWord = strtolower(end($words));
+
+    if ($lastWord === 'service' || $lastWord === 'services') {
+        array_pop($words);
+    }
+
+    return implode(' ', $words);
+}
 ?>
 
 <main class="servicePage">
@@ -25,7 +36,7 @@ get_template_part('parts/section', 'banner');
     if ($the_query->have_posts()) :
     ?>
         <div class="container">
-            <p class="text-light-grey fs-80 fw-700 text-center text-capitalize highlight-primary lh-1 py-5 pt-md-8 pb-md-7">Our <span><?= get_the_title() ?> services</span></p>
+            <p class="text-light-grey fs-80 fw-700 text-center text-capitalize highlight-primary lh-1 py-5 pt-md-8 pb-md-7">Our <span><?= removeLastWordIfService(get_the_title()) ?> services</span></p>
 
             <div class="row gy-4 gy-md-5 mb-4 mb-md-7">
                 <?php
@@ -152,6 +163,51 @@ get_template_part('parts/section', 'banner');
                 </div>
             </div>
         </section>
+    <?php endif; ?>
+
+    <?php $extra_content = get_field('extra_content'); ?>
+    <?php if(!empty($extra_content['title'])) : ?>
+    <section class="bg-lighter position-relative pt-5 pt-md-7">
+        <img class="position-absolute bottom-0 start-0 h-100 d-none d-lg-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/suburb-about.png" alt="">
+
+        <div class="container position-relative pb-5 pb-md-0">
+            <div class="row align-items-center gy-7 gx-xl-7">
+                <div class="col-12 col-lg-6 order-2 order-md-1">
+                    <div class="h-100 rounded-20 overflow-hidden">
+                        <img class="h-100 w-100 object-fit-cover" src="<?= $extra_content['image']['url'] ?>" alt="<?= $extra_content['image']['alt'] ?>" />
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 order-1 order-md-2">
+                    <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $extra_content['title'] ?></p>
+
+                    <article class="description lh-1_67 text-dark fw-500 py-4">
+                        <?= $extra_content['description'] ?>
+                    </article>
+
+                    <div class="col-xl-9">
+                        <div class="row gx-3">
+                            <div class="col-6">
+                                <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
+                                    Call Us
+                                </a>
+                            </div>
+
+                            <?php if (!empty($extra_content['link']['url']) && !empty($extra_content['link']['title'])) : ?>
+                                <div class="col-6">
+                                    <a href="<?= $extra_content['link']['url'] ?>" target="<?= $extra_content['link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
+                                        <?= $extra_content['link']['title'] ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/chevron-primary.png" alt="<?= bloginfo('name') ?>">
+    </section>
     <?php endif; ?>
 </main>
 
