@@ -1,5 +1,15 @@
 <section class="service-cta py-5 pt-md-6 pb-md-9">
     <div class="container">
+        <?php if (!empty(get_field('service_cta_title'))) : ?>
+            <p class="text-light-grey highlight-primary fs-60 lh-1 fw-800 text-center text-capitalize"><?= get_field('service_cta_title') ?></p>
+        <?php endif; ?>
+
+        <?php if (!empty(get_field('service_cta_description'))) : ?>
+            <article class="col-xl-10 description mx-auto text-center text-dark pt-3 lh-1_67 pb-5">
+                <?= get_field('service_cta_description') ?>
+            </article>
+        <?php endif; ?>
+
         <div class="row gy-4 justify-content-center">
             <?php if (have_rows('service_cta')) :
                 while (have_rows('service_cta')) : the_row(); ?>

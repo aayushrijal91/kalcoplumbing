@@ -19,6 +19,19 @@ function removeLastWordIfService($string)
 ?>
 
 <main class="servicePage">
+    <?php $introduction = get_field('introduction'); ?>
+    <?php if (!empty($introduction['title']) && !empty($introduction['description'])) : ?>
+        <section class="introduction pt-6 pt-md-8 pt-xl-9">
+            <div class="container">
+                <p class="text-light-grey highlight-primary fs-60 lh-1 fw-800 text-center"><?= $introduction['title'] ?></p>
+
+                <article class="col-xl-10 description mx-auto text-center text-dark pt-5 lh-1_67 pb-5">
+                    <?= $introduction['description'] ?>
+                </article>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <?php $args = array(
         'post_type'      => 'page',
         'posts_per_page' => -1,
