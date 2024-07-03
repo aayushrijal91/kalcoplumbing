@@ -71,6 +71,10 @@ function removeLastWordIfService($string)
                             <div class="d-flex flex-column justify-content-between flex-grow-1">
                                 <p class="text-primary fw-700 fs-30 text-center py-4"><?= get_the_title(); ?></p>
 
+                                <?php if (!empty(get_field('short_description'))) : ?>
+                                    <p class="text-center pb-4"><?= get_field('short_description') ?></p>
+                                <?php endif; ?>
+
                                 <div class="d-flex justify-content-center">
                                     <a href="<?= get_the_permalink() ?>" class="btn btn-primary text-white rounded-pill d-inline-flex fs-20 fw-600 px-6">View</a>
                                 </div>
