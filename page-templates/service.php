@@ -117,6 +117,28 @@ function removeLastWordIfService($string)
         <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/chevron-primary.png" alt="<?= bloginfo('name') ?>">
     </section>
 
+    <?php if (have_rows('why_us')) : ?>
+        <section class="extraContent bg-tertiary py-6">
+            <div class="container">
+                <?php if (!empty(get_field('why_us_title'))) : ?>
+                    <p class="text-light-grey highlight-white fs-60 lh-1 fw-800 text-center"><?= get_field('why_us_title') ?></p>
+                <?php endif; ?>
+
+                <div id="extraContentSlider" class="pt-6">
+                    <?php while (have_rows('why_us')) : the_row(); ?>
+                        <div class="bg-white rounded-30 py-5 px-4 text-center">
+                            <p class="fs-40 fw-700 lh-1 text-primary"><?= get_sub_field('title') ?></p>
+
+                            <article class="description lh-1_67 pt-4 pt-md-5 text-grey">
+                                <?= get_sub_field('content'); ?>
+                            </article>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <?php if (have_rows('faqs')) : ?>
         <section class="faqsWrapper">
             <div class="faqs py-6">
@@ -165,49 +187,49 @@ function removeLastWordIfService($string)
         </section>
     <?php endif; ?>
 
-    <?php $extra_content = get_field('extra_content'); ?>
-    <?php if(!empty($extra_content['title'])) : ?>
-    <section class="bg-lighter position-relative pt-5 pt-md-7">
-        <img class="position-absolute bottom-0 start-0 h-100 d-none d-lg-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/suburb-about.png" alt="">
+    <?php $extra_content = get_field('extra_content');
+    if (!empty($extra_content['title'])) : ?>
+        <section class="bg-lighter position-relative pt-5 pt-md-7">
+            <img class="position-absolute bottom-0 start-0 h-100 d-none d-lg-block" src="<?= get_template_directory_uri() ?>/assets/images/icons/suburb-about.png" alt="">
 
-        <div class="container position-relative pb-5 pb-md-0">
-            <div class="row align-items-center gy-7 gx-xl-7">
-                <div class="col-12 col-lg-6 order-2 order-md-1">
-                    <div class="h-100 rounded-20 overflow-hidden">
-                        <img class="h-100 w-100 object-fit-cover" src="<?= $extra_content['image']['url'] ?>" alt="<?= $extra_content['image']['alt'] ?>" />
+            <div class="container position-relative pb-5 pb-md-0">
+                <div class="row align-items-center gy-7 gx-xl-7">
+                    <div class="col-12 col-lg-6 order-2 order-md-1">
+                        <div class="h-100 rounded-20 overflow-hidden">
+                            <img class="h-100 w-100 object-fit-cover" src="<?= $extra_content['image']['url'] ?>" alt="<?= $extra_content['image']['alt'] ?>" />
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-12 col-lg-6 order-1 order-md-2">
-                    <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $extra_content['title'] ?></p>
+                    <div class="col-12 col-lg-6 order-1 order-md-2">
+                        <p class="text-dark-grey fw-800 fs-60 lh-0_9 highlight-primary text-capitalize"><?= $extra_content['title'] ?></p>
 
-                    <article class="description lh-1_67 text-dark fw-500 py-4">
-                        <?= $extra_content['description'] ?>
-                    </article>
+                        <article class="description lh-1_67 text-dark fw-500 py-4">
+                            <?= $extra_content['description'] ?>
+                        </article>
 
-                    <div class="col-xl-9">
-                        <div class="row gx-3">
-                            <div class="col-6">
-                                <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                    Call Us
-                                </a>
-                            </div>
-
-                            <?php if (!empty($extra_content['link']['url']) && !empty($extra_content['link']['title'])) : ?>
+                        <div class="col-xl-9">
+                            <div class="row gx-3">
                                 <div class="col-6">
-                                    <a href="<?= $extra_content['link']['url'] ?>" target="<?= $extra_content['link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
-                                        <?= $extra_content['link']['title'] ?>
+                                    <a href="tel:<?= get_field('general', 'options')['phone_number'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
+                                        Call Us
                                     </a>
                                 </div>
-                            <?php endif; ?>
+
+                                <?php if (!empty($extra_content['link']['url']) && !empty($extra_content['link']['title'])) : ?>
+                                    <div class="col-6">
+                                        <a href="<?= $extra_content['link']['url'] ?>" target="<?= $extra_content['link']['target'] ?>" class="btn btn-primary w-100 rounded-pill text-white fs-18 fw-600">
+                                            <?= $extra_content['link']['title'] ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/chevron-primary.png" alt="<?= bloginfo('name') ?>">
-    </section>
+            <img class="w-100" src="<?= get_template_directory_uri() ?>/assets/images/icons/chevron-primary.png" alt="<?= bloginfo('name') ?>">
+        </section>
     <?php endif; ?>
 </main>
 
