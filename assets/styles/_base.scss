@@ -29,22 +29,8 @@ body {
     font-family: $font-body;
     color: $dark;
     font-weight: 400;
-    margin: 180px auto 0;
     font-size: 1rem;
     line-height: 1.25;
-    overflow-x: hidden;
-
-    @include media-breakpoint-down(xl) {
-        margin-top: 224px;
-    }
-
-    @include media-breakpoint-down(lg) {
-        margin-top: 300px;
-    }
-
-    @include media-breakpoint-down(sm) {
-        margin-top: 108px;
-    }
 }
 
 img {
