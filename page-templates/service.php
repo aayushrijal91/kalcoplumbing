@@ -47,11 +47,19 @@ function removeLastWordIfService($string)
     );
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) :
+
+        $services = get_field('services');
     ?>
         <div class="container">
-            <p class="text-light-grey fs-80 fw-700 text-center text-capitalize highlight-primary lh-1 py-5 pt-md-8 pb-md-7">Our <span><?= removeLastWordIfService(get_the_title()) ?> services</span></p>
+            <p class="text-light-grey fs-80 fw-700 text-center text-capitalize highlight-primary lh-1 pt-5 pt-md-8"><?= !empty($services['title']) ? $services['title'] : 'Our <span>' . removeLastWordIfService(get_the_title()) . ' services</span>' ?></p>
 
-            <div class="row gy-4 gy-md-5 mb-4 mb-md-7">
+            <?php if (!empty($services['description'])) : ?>
+                <article class="col-xl-10 description mx-auto text-center text-dark pt-5 lh-1_67">
+                    <?= $services['description'] ?>
+                </article>
+            <?php endif; ?>
+
+            <div class="row gy-4 gy-md-5 mt-0 mb-4 mb-md-7">
                 <?php
                 while ($the_query->have_posts()) : $the_query->the_post();
                     $featured_img_url = null;
@@ -90,6 +98,37 @@ function removeLastWordIfService($string)
     ?>
 
     <?= get_template_part('parts/section', 'serviceCta'); ?>
+
+    <?php $sub_services = get_field('sub_services'); ?>
+    <?php if (have_rows('sub_services_list')) : ?>
+        <section class="subServices pb-8">
+            <div class="container">
+                <?php if (!empty($sub_services['title'])) : ?>
+                    <p class="text-light-grey fs-60 fw-700 text-center text-capitalize highlight-primary lh-1"><?= $sub_services['title'] ?></p>
+                <?php endif; ?>
+
+                <?php if (!empty($sub_services['description'])) : ?>
+                    <article class="col-xl-10 description mx-auto text-center text-dark pt-5 lh-1_67">
+                        <?= $sub_services['description'] ?>
+                    </article>
+                <?php endif; ?>
+
+                <div class="row g-4 pt-5">
+                    <?php while (have_rows('sub_services_list')) : the_row(); ?>
+                        <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                            <div class="subServiceCard h-100 bg-dark-grey text-white p-4 rounded-20">
+                                <p class="text-white fw-800 fs-30 lh-0_9 text-capitalize py-4"><?= get_sub_field('title') ?></p>
+
+                                <article class="description lh-1_5">
+                                    <?= get_sub_field('content') ?>
+                                </article>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <section class="bg-lighter position-relative pt-5 pt-md-7">
         <?php $about = get_field('about'); ?>

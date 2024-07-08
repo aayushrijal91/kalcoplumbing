@@ -5,12 +5,12 @@
         <?php endif; ?>
 
         <?php if (!empty(get_field('service_cta_description'))) : ?>
-            <article class="col-xl-10 description mx-auto text-center text-dark pt-3 lh-1_67 pb-5">
+            <article class="col-xl-10 description mx-auto text-center text-dark pt-md-5 lh-1_67">
                 <?= get_field('service_cta_description') ?>
             </article>
         <?php endif; ?>
 
-        <div class="row gy-4 justify-content-center">
+        <div class="row gy-4 justify-content-center pt-5">
             <?php if (have_rows('service_cta')) :
                 while (have_rows('service_cta')) : the_row(); ?>
                     <div class="col-12 col-lg-6 col-xl-4">
