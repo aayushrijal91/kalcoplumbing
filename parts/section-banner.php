@@ -63,7 +63,17 @@
             </div>
 
             <div class="col-12 col-lg-6 pe-xxl-8">
-                    <iframe class="bannerImg" src="https://www.youtube.com/embed/uQLCKs0lg6A?&autoplay=1&mute=1&loop=1&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <?php
+                $iframe_url = "";
+                if (is_front_page()) {
+                    $iframe_url = "uQLCKs0lg6A";
+                } elseif (is_page_template('page-templates/service-inner-commercial.php') || is_page_template('page-templates/service-inner-general.php') || is_page_template('page-templates/service-inner-residential.php')) {
+                    $iframe_url = "0bGQCH9A0Uc";
+                } else {
+                    $iframe_url = "YJNpcDm8pDY";
+                }
+                ?>
+                <iframe class="bannerImg" src="https://www.youtube.com/embed/<?= $iframe_url ?>?&autoplay=1&mute=1&loop=1&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>
